@@ -109,7 +109,7 @@ func (coordinator *ReplicationCoordinator) startDocumentReplication() error {
 	// the source is sharding or replica-set
 	// fromIsSharding := len(coordinator.Sources) > 1 || fromConn0.IsMongos()
 
-	fromIsSharding := len(coordinator.MongoUrls) > 1 || coordinator.MongoS != nil
+	fromIsSharding := len(coordinator.MongoD) > 1 || coordinator.MongoS != nil
 
 	// init orphan sharding chunk map if source is sharding
 	shardingChunkMap, err := fetchChunkMap(fromIsSharding)
